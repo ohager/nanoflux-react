@@ -58,7 +58,6 @@ describe("nanoflux-react.connect", () => {
 			
 			expect(wrapper.props().testProp).toBeDefined();
 			expect(wrapper.props().testProp).toBe('initial');
-			expect(wrapper).toMatchSnapshot()
 		});
 		
 		it("renders App with mapped state to props using *single* store - updated states", () => {
