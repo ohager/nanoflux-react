@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from '../src/index';
 import Nanoflux from 'nanoflux';
-import {mount, render, shallow} from "enzyme";
+import {shallow} from "enzyme";
 
 
 // --------------------- Nanoflux Setup -------------------------------
@@ -39,7 +39,7 @@ Nanoflux.createActions('testActions', defaultDispatcher, actionDescriptor);
 // --------------------- Nanoflux Setup End ----------------------------
 
 
-class Test extends React.Component{
+class Test extends React.Component {
 	render() {
 		return <h2>Test, {`${this.props.testProp}`} </h2>
 	}
@@ -59,6 +59,17 @@ describe("nanoflux-react.connect", () => {
 			expect(wrapper.props().testProp).toBeDefined();
 			expect(wrapper.props().testProp).toBe('initial');
 			expect(wrapper).toMatchSnapshot()
+		});
+		
+		it("renders App with mapped state to props using *single* store - updated states", () => {
+			
+			const testComponent = connect('testStore', mapStateToProps)(Test);
+			
+			const actions = Nanoflux.getActions('testActions');
+			const wrapper = shallow(React.createElement(testComponent));
+			
+			actions.testAction('updated');
+			expect(wrapper.props().testProp).toBe('updated');
 		})
 	}
 );

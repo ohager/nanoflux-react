@@ -18,12 +18,12 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 0,
       "_context": Object {},
-      "_currentElement": <function NanofluxStoreConnector(props) {/* istanbul ignore next */_classCallCheck(this, NanofluxStoreConnector);cov_2g1v1qcf3j.f[9]++;cov_2g1v1qcf3j.s[17]++;var _this2 = _possibleConstructorReturn(this, (NanofluxStoreConnector.__proto__ || Object.getPrototypeOf(NanofluxStoreConnector)).call(this,
+      "_currentElement": <function NanofluxStoreConnector(props) {/* istanbul ignore next */_classCallCheck(this, NanofluxStoreConnector);cov_1ewv3jqfag.f[9]++;cov_1ewv3jqfag.s[17]++;var _this2 = _possibleConstructorReturn(this, (NanofluxStoreConnector.__proto__ || Object.getPrototypeOf(NanofluxStoreConnector)).call(this,
 					props));
 
-					var storeObj = /* istanbul ignore next */(cov_2g1v1qcf3j.s[18]++, typeof store === 'string' ? /* istanbul ignore next */(cov_2g1v1qcf3j.b[1][0]++, /* istanbul ignore next */_nanoflux2.default.getStore(store)) : /* istanbul ignore next */(cov_2g1v1qcf3j.b[1][1]++, store)); /* istanbul ignore next */cov_2g1v1qcf3j.s[19]++;
+					var storeObj = /* istanbul ignore next */(cov_1ewv3jqfag.s[18]++, typeof store === 'string' ? /* istanbul ignore next */(cov_1ewv3jqfag.b[1][0]++, /* istanbul ignore next */_nanoflux2.default.getStore(store)) : /* istanbul ignore next */(cov_1ewv3jqfag.b[1][1]++, store)); /* istanbul ignore next */cov_1ewv3jqfag.s[19]++;
 
-					/* istanbul ignore next */_this2.state = NanofluxStoreConnector.__mapStoreState(); /* istanbul ignore next */cov_2g1v1qcf3j.s[20]++;
+					/* istanbul ignore next */_this2.state = NanofluxStoreConnector.__mapStoreState(); /* istanbul ignore next */cov_1ewv3jqfag.s[20]++;
 					/* istanbul ignore next */_this2.subscription = storeObj.subscribe( /* istanbul ignore next */_this2, /* istanbul ignore next */_this2.__onStoreUpdate); /* istanbul ignore next */return _this2;
 				} />,
       "_debugID": 1,
@@ -74,12 +74,12 @@ ShallowWrapper {
     "render": [Function render]
   },
   "root": [Circular],
-  "unrendered": <function NanofluxStoreConnector(props) {/* istanbul ignore next */_classCallCheck(this, NanofluxStoreConnector);cov_2g1v1qcf3j.f[9]++;cov_2g1v1qcf3j.s[17]++;var _this2 = _possibleConstructorReturn(this, (NanofluxStoreConnector.__proto__ || Object.getPrototypeOf(NanofluxStoreConnector)).call(this,
+  "unrendered": <function NanofluxStoreConnector(props) {/* istanbul ignore next */_classCallCheck(this, NanofluxStoreConnector);cov_1ewv3jqfag.f[9]++;cov_1ewv3jqfag.s[17]++;var _this2 = _possibleConstructorReturn(this, (NanofluxStoreConnector.__proto__ || Object.getPrototypeOf(NanofluxStoreConnector)).call(this,
 					props));
 
-					var storeObj = /* istanbul ignore next */(cov_2g1v1qcf3j.s[18]++, typeof store === 'string' ? /* istanbul ignore next */(cov_2g1v1qcf3j.b[1][0]++, /* istanbul ignore next */_nanoflux2.default.getStore(store)) : /* istanbul ignore next */(cov_2g1v1qcf3j.b[1][1]++, store)); /* istanbul ignore next */cov_2g1v1qcf3j.s[19]++;
+					var storeObj = /* istanbul ignore next */(cov_1ewv3jqfag.s[18]++, typeof store === 'string' ? /* istanbul ignore next */(cov_1ewv3jqfag.b[1][0]++, /* istanbul ignore next */_nanoflux2.default.getStore(store)) : /* istanbul ignore next */(cov_1ewv3jqfag.b[1][1]++, store)); /* istanbul ignore next */cov_1ewv3jqfag.s[19]++;
 
-					/* istanbul ignore next */_this2.state = NanofluxStoreConnector.__mapStoreState(); /* istanbul ignore next */cov_2g1v1qcf3j.s[20]++;
+					/* istanbul ignore next */_this2.state = NanofluxStoreConnector.__mapStoreState(); /* istanbul ignore next */cov_1ewv3jqfag.s[20]++;
 					/* istanbul ignore next */_this2.subscription = storeObj.subscribe( /* istanbul ignore next */_this2, /* istanbul ignore next */_this2.__onStoreUpdate); /* istanbul ignore next */return _this2;
 				} />
 }
