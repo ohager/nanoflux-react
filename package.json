@@ -7,7 +7,7 @@
   "scripts": {
     "test-debug": "node %NODE_DEBUG_OPTION% node_modules/jest/bin/jest.js --runInBand",
     "test-local": "node node_modules/jest/bin/jest.js",
-    "test": "node node_modules/jest/bin/jest.js && codecov",
+    "test1": "node node_modules/jest/bin/jest.js && codecov",
     "build": "npm run build-cjs && npm run build-es",
     "build-cjs": "rimraf lib && cross-env BABEL_ENV=cjs node ./node_modules/babel-cli/bin/babel ./src -d lib --ignore '__tests__'",
     "build-es": "rimraf es6 && cross-env BABEL_ENV=es node ./node_modules/babel-cli/bin/babel ./src -d es6 --ignore '__tests__'"
