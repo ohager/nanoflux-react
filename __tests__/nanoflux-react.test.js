@@ -67,7 +67,6 @@ Nanoflux.createActions('testActions2', defaultDispatcher, actionDescriptor2);
 
 const getProps = (wrapper, component) => wrapper.find(component).props();
 
-
 class Test extends React.Component {
 	render() {
 		return <h2>Test, {`${this.props.test1Prop}`} </h2>
