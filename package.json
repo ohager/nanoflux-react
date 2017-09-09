@@ -58,6 +58,7 @@
     "rimraf": "^2.5.4"
   },
   "dependencies": {
-    "nanoflux": "^1.1.1"
+    "nanoflux": "^1.1.1",
+    "nanoflux-fusion": "^0.6.0-beta"
   }
 }

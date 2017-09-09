@@ -1,8 +1,7 @@
 import React from 'react';
-import {connect} from '../src/index';
+import {withActions,connect} from '../src/index';
 import Nanoflux from 'nanoflux';
 import {mount, shallow} from "enzyme";
-import {withActions} from "../src/nanoflux-react";
 
 
 // --------------------- Nanoflux Setup -------------------------------

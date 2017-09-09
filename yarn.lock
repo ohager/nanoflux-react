@@ -2300,7 +2300,13 @@ nan@^2.3.0:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.6.2.tgz#e4ff34e6c95fdfb5aecc08de6596f43605a7db45"
 
-nanoflux@^1.1.1:
+nanoflux-fusion@^0.6.0-beta:
+  version "0.6.0-beta"
+  resolved "https://registry.yarnpkg.com/nanoflux-fusion/-/nanoflux-fusion-0.6.0-beta.tgz#7af30570fc61315b699789bae4b3596edc0ac59b"
+  dependencies:
+    nanoflux latest
+
+nanoflux@^1.1.1, nanoflux@latest:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/nanoflux/-/nanoflux-1.1.1.tgz#3da4c1fd3244884e60bd7efaf85a2ffb1e2f46f0"
 
