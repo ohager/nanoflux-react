@@ -1,7 +1,7 @@
 # nanoflux-react
 
 Provides [High Order Components](https://facebook.github.io/react/docs/higher-order-components.html)for convenient usage 
-of [nanoflux](http://ohager.github.io/nanoflux/) with [ReactJS](https://facebook.github.io/react).
+of [nanoflux](http://ohager.github.io/nanoflux/) and/or [nanoflux-fusion](http://ohager.github.io/nanoflux-fusion/) with [ReactJS](https://facebook.github.io/react).
 
 Basically, it turns action functions and store states into properties for underlying components, and establish the store 
 update binding, such that the properties are updated automatically on state store changes.
@@ -102,11 +102,63 @@ To connect a component to multiple stores you simply chain the High Order Compon
 const connectedAppComponent = connect('appStore', mapStateToPropsForAppStore)(
 	                            connect('otherStore', mapStateToPropsForOtherStore)(App));
 ```
+> For a complete example you may look at [Nanoflux React Demo](https://github.com/ohager/nanoflux-react-demo)
 
+# How to use with nanoflux-fusion
+
+With [nanoflux-fusion](http://ohager.github.io/nanoflux-fusion/) it's even easier to use _nanoflux-react_, as
+_nanoflux-fusion_ works with a single store only. 
+When using Fusion two details are different:
+
+1. Pass the store as object instead of its name
+2. You don't use the _actions_ parameter for action mapper.
+
+```javascript
+// --------- Begin Fusion Setup ------------------
+
+import NanofluxFusion from 'nanoflux-fusion';
+
+// create a 'Fusionator' (aka reducer)
+NanofluxFusion.createFusionator({
+    testAction1 : (previousState, args) => {
+        return { test1 : args[0] }
+    }
+},
+{ // initial state 
+    test1: 'test1',
+    test2: 'test2',
+});
+
+// gets the only one store
+const Store = NanofluxFusion.getFusionStore();
+
+// define state selectors
+const getTest1State = () => Store.getState().test1;
+const getTest2State = () => Store.getState().test2;
+
+// --------- End Fusion Setup ------------------
+
+// in your components file
+
+// here's the same as with normal nanoflux
+const mapStatesToProps = {
+	test1Prop: () => getTest1State(),
+	test2Prop: () => getTest2State()
+};
+
+// here we use the getFusionActor method.
+// notable, that here we don't use `actions` parameter for mapper
+const mapActionsToProps = () => ({
+    testAction1: NanofluxFusion.getFusionActor('testAction1'),
+});
+
+// enhancing your component
+// you can pass the store as object, too
+const enhancedComponent = withActions(Store, mapActionsToProps)(
+	connect(Store, mapStatesToProps)(YourComponent)
+	);
+```
 
 #To do
 
-- Complete Readme/Doc
 - Update [Project Site](http://ohager.github.io/nanoflux/)'s API doc
-- Tests for [nanoflux-fusion](https://github.com/ohager/nanoflux-fusion)
-- Update [nanoflux-react-demo](https://ohager.github.io/nanoflux-react-demo) using *nanoflux-react*

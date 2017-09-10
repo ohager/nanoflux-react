@@ -39,7 +39,11 @@
   },
   "homepage": "https://github.com/ohager/nanoflux-react#readme",
   "peerDependencies": {
-    "react": "^15.0.1"
+    "react": "^15.0.1",
+    "nanoflux" : "^1.1.1"
+  },
+  "optionalDependencies": {
+    "nanoflux-fusion" : "^0.6.0-beta"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -52,13 +56,13 @@
     "cross-env": "^2.0.1",
     "enzyme": "^2.9.1",
     "jest": "^20.0.4",
+    "nanoflux-fusion": "^0.6.0-beta",
+    "nanoflux": "^1.1.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
     "rimraf": "^2.5.4"
   },
   "dependencies": {
-    "nanoflux": "^1.1.1",
-    "nanoflux-fusion": "^0.6.0-beta"
   }
 }

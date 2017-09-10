@@ -1,5 +1,5 @@
 import React from 'react';
-import {withActions,connect} from '../src/index';
+	import {withActions,connect} from '../src/index';
 import Fusion from 'nanoflux-fusion';
 import {mount, shallow} from "enzyme";
 
@@ -40,8 +40,10 @@ describe("nanoflux-fusion-react.connect", () => {
 		it("renders App with mapped state to props", () => {
 			
 			const testComponent = connect(Store, mapStatesToProps)(Test);
+			
 			const wrapper = mount(React.createElement(testComponent));
 			const props = getProps(wrapper, 'Test');
+			
 			expect(props.test1Prop).toBeDefined();
 			expect(props.test2Prop).toBeDefined();
 			expect(props.test1Prop).toBe('test1');
@@ -64,14 +66,26 @@ describe("nanoflux-fusion-react.connect", () => {
 	}
 );
 
-
 describe("nanoflux-react.withActions", () => {
 		
 		it("renders App with mapped actions to props", () => {
-		
-		});
-		
-		it("renders App with *partially* mapped actions to props", () => {
+			
+			const mockedAction1 = jest.fn(Fusion.getFusionActor('testAction1'));
+			
+			const mapActionsToProps = () => ({
+				testAction1: mockedAction1,
+			});
+			
+			const testComponent = withActions(Store, mapActionsToProps)(Test);
+			const wrapper = mount(React.createElement(testComponent));
+			
+			const propActions = getProps(wrapper, 'Test').actions;
+			
+			expect(propActions).toBeDefined();
+			expect(propActions.testAction1).toBeDefined();
+			
+			propActions.testAction1("bla");
+			expect(mockedAction1).toBeCalled();
 		
 		});
 		
@@ -80,16 +94,25 @@ describe("nanoflux-react.withActions", () => {
 
 describe("nanoflux-react.composition", () => {
 		
-		it("renders App with composed *withActions*", () => {
-		
-		});
-		
 		it("renders App with composed *withActions* and *connect*", () => {
-		
-		});
-
-		it("renders App with composed *connect*", () => {
-		
+			
+			const mapActionsToProps = () => ({
+				testAction1: Fusion.getFusionActor('testAction1'),
+			});
+			
+			const testComponent = withActions(Store, mapActionsToProps)(
+				connect(Store, mapStatesToProps)(Test)
+			);
+			
+			const wrapper = mount(React.createElement(testComponent));
+			
+			let props = getProps(wrapper, 'Test');
+			props.actions.testAction1('updated');
+			
+			props = getProps(wrapper, 'Test');
+			expect(props.test1Prop).toBeDefined();
+			expect(props.test1Prop).toBe('updated');
+			
 		});
 	}
 );

@@ -187,12 +187,14 @@ describe("nanoflux-react.composition", () => {
 				testAction1: mockedAction1,
 				testAction2: mockedAction2
 			});
+		
 			const mapActions2ToProps = (actions) => ({
 				otherAction1: mockedOtherAction1
 			});
 			
 			const testComponent = withActions('testActions2', mapActions2ToProps)(
 				withActions('testActions', mapActionsToProps)(Test));
+			
 			const wrapper = mount(React.createElement(testComponent));
 			const propActions = getProps(wrapper,'Test').actions;
 
@@ -212,8 +214,11 @@ describe("nanoflux-react.composition", () => {
 			
 			const testComponent = withActions('testActions', mapActionsToProps)(
 				connect('testStore', mapStatesToProps)(Test));
+			
 			const wrapper = mount(React.createElement(testComponent));
+			
 			let props = getProps(wrapper, 'Test');
+			
 			expect(props.actions.testAction1).toBeDefined();
 			expect(props.actions.testAction2).toBeDefined();
 			expect(props.test1Prop).toBe('test1');
@@ -234,6 +239,7 @@ describe("nanoflux-react.composition", () => {
 				connect('testStore', mapStatesToProps)(Test));
 			
 			const wrapper = mount(React.createElement(testComponent));
+			
 			let props = getProps(wrapper, 'Test');
 			
 			const actions1 = Nanoflux.getActions('testActions');
