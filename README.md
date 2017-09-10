@@ -1,8 +1,9 @@
+# nanoflux-react
 [![Build Status](https://travis-ci.org/ohager/nanoflux-react.svg?branch=master)](https://travis-ci.org/ohager/nanoflux-react)
 [![codecov](https://codecov.io/gh/ohager/nanoflux-react/branch/master/graph/badge.svg)](https://codecov.io/gh/ohager/nanoflux-react)
+
 [![NPM](https://nodei.co/npm/nanoflux-react.png)](https://npmjs.org/package/nanoflux-react)
 
-# nanoflux-react
 
 Provides [High Order Components](https://facebook.github.io/react/docs/higher-order-components.html) for convenient usage 
 of [nanoflux](http://ohager.github.io/nanoflux/) and/or [nanoflux-fusion](http://ohager.github.io/nanoflux-fusion/) with [ReactJS](https://facebook.github.io/react).
