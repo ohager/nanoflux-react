@@ -1,6 +1,6 @@
 {
   "name": "nanoflux-react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Nanoflux bindings for ReactJS",
   "jsnext:main": "es6/react-nanoflux",
   "main": "lib/index",
