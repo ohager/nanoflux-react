@@ -76,7 +76,7 @@ describe("nanoflux-react.withActions", () => {
 				testAction1: mockedAction1,
 			});
 			
-			const testComponent = withActions(Store, mapActionsToProps)(Test);
+			const testComponent = withActions(null, mapActionsToProps)(Test);
 			const wrapper = mount(React.createElement(testComponent));
 			
 			const propActions = getProps(wrapper, 'Test').actions;
@@ -100,7 +100,7 @@ describe("nanoflux-react.composition", () => {
 				testAction1: Fusion.getFusionActor('testAction1'),
 			});
 			
-			const testComponent = withActions(Store, mapActionsToProps)(
+			const testComponent = withActions(null, mapActionsToProps)(
 				connect(Store, mapStatesToProps)(Test)
 			);
 			
